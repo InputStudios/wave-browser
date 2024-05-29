@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="Input_Studios_Wave.TabContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Input_Studios_Wave"
+             xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            
+            <!--Left Column-->
+            <Grid>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Button Height="25" Width="25" Padding="0" Margin="0,0,5,0"
+                            BorderBrush="Transparent" BorderThickness="0"
+                            Background="Transparent" Click="OnBackButtonClick"
+                            IsEnabled="{Binding IsBrowserNavigating, Converter={StaticResource InverseBooleanConverter}}">
+                        <Viewbox Width="20" Height="20">
+                            <Path Data="{StaticResource BackIcon}" Fill="White"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Height="25" Width="25" Padding="0" Margin="10,0,5,0"
+                            BorderBrush="Transparent" BorderThickness="0"
+                            Background="Transparent" Click="OnForwardButtonClick">
+                        <Viewbox Width="20" Height="20">
+                            <Path Data="{StaticResource ForwardIcon}" Fill="White"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Height="25" Width="25" Padding="0" Margin="10,0,5,0"
+                            BorderBrush="Transparent" BorderThickness="0"
+                            Background="Transparent" Click="OnRefreshButtonClick">
+                        <Button.Content>
+                            <Viewbox Width="20" Height="20">
+                                <Path Data="{StaticResource RefreshIcon}" Fill="White"/>
+                            </Viewbox>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button Height="25" Width="25" Padding="0" Margin="0,0,10,0"
+                            BorderBrush="Transparent" BorderThickness="0"
+                            Background="Transparent">
+                        <Viewbox Width="20" Height="20" Margin="0 0 4 0">
+                            <Path Data="{StaticResource BookmarkIcon}" Fill="White"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Height="25" Width="25" Padding="0" Margin="0,0,5,0"
+                            BorderBrush="Transparent" BorderThickness="0"
+                            Background="Transparent">
+                        <Button.Content>
+                            <Viewbox Width="20" Height="20">
+                                <Path Data="{StaticResource HomeIcon}" Fill="White"/>
+                            </Viewbox>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+            <!--Center Column-->
+            <TextBox Grid.Column="1" Margin="5,12" Padding="105 0 30 0" Background="#FF201F21" BorderBrush="#FF2F2F2F" 
+                     VerticalContentAlignment="Center" Foreground="#7FFFFFFF" 
+                      Text="{Binding Url, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyDown="OnUrlTextBoxKeyDown">
+            </TextBox>
+            <Button Width="20" Height="20" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,15,0"
+                    Background="Transparent" BorderBrush="Transparent" BorderThickness="0"
+                    Click="OnNavigateButtonClick">
+                <Viewbox>
+                    <Path Data="{StaticResource SearchIcon}" Fill="White" Opacity="0.5"/>
+                </Viewbox>
+            </Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Margin="7,15" Grid.Column="1">
+                <Button Width="20" Height="20" Padding="0" Margin="5,0,5,0" BorderBrush="Transparent" BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Viewbox Width="16" Height="16">
+                            <Path Data="{StaticResource PadlockIcon}" Fill="White" Opacity="0.5"/>
+                        </Viewbox>
+                    </Button.Content>
+                </Button>
+                <TextBlock Text="Not Secure" VerticalAlignment="Center" Foreground="#7FFFFFFF"/>
+            </StackPanel>
+
+            <!--Right Column-->
+            <Grid Grid.Column="2">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Button Height="25" Width="25" Padding="0" Margin="0,0,5,0"
+                            BorderBrush="Transparent" BorderThickness="0"
+                            Background="Transparent" Visibility="Collapsed">
+                        <Button.Content>
+                            <Viewbox Width="20" Height="20">
+                                <Image Source="Assets/Icons/Close.png"/>
+                            </Viewbox>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button Height="25" Width="25" Padding="0" Margin="0,0,5,0"
+                            BorderBrush="Transparent" BorderThickness="0"
+                            Background="Transparent">
+                        <Button.Content>
+                            <Viewbox Width="20" Height="20">
+                                <Path Data="{StaticResource MenuIcon}" Fill="White"/>
+                            </Viewbox>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <cef:ChromiumWebBrowser x:Name="Browser" Grid.Row="1" Address="https://www.bing.com" Initialized="Browser_Initialized"/>    </Grid>
+</UserControl>

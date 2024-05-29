@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- icon666.com - MILLIONS vector ICONS FREE -->
+
+<svg
+   fill="none"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="Maximize.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="11.313709"
+     inkscape:cx="18.473165"
+     inkscape:cy="6.4965435"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="2509"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g2" />
+  <g
+     fill="rgb(0,0,0)"
+     id="g2">
+    <path
+       id="path1"
+       d="M 4 7 C 2.8970011 7 2 7.8970011 2 9 L 2 19 C 2 20.102999 2.8970011 21 4 21 L 16 21 C 17.102999 21 18 20.102999 18 19 L 18 9 C 18 7.8970011 17.102999 7 16 7 L 4 7 z M 4 9.0917969 L 16 9.0917969 L 16 11 L 16 11.09375 L 16.001953 19 L 4 19 L 4 11.09375 L 4 11 L 4 9.0917969 z " />
+    <path
+       d="m22 5c0-1.103-.897-2-2-2h-13c-1.103 0-2 .897-2 2h13.001c1.101 0 1.996.895 1.999 1.994l.002 8.006h-.002v2c1.103 0 2-.897 2-2v-6.993l.001-.007v-2l-.001-.01z"
+       id="path2" />
+  </g>
+</svg>
